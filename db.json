@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "686d",
+      "username": "Kavin",
+      "email": "kavinmaithri@gmail.com",
+      "password": "Po/52lkn",
+      "role": "event-manager"
+    },
+    {
+      "id": "efe3",
+      "username": "kavin",
+      "email": "kavinmaithri@gmail.com",
+      "password": "Po/52lkn",
+      "role": "event-organizer"
+    },
+    {
+      "id": "7150",
+      "username": "Kavin",
+      "email": "22ai029@skcet.ac.in",
+      "password": "Kavin*123",
+      "role": "event-manager"
+    },
+    {
+      "id": "3d3f",
+      "username": "",
+      "email": "",
+      "password": "",
+      "role": "event-manager"
+    }
+  ]
+}

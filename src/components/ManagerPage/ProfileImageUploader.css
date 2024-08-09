@@ -1,0 +1,27 @@
+.profile-image-uploader {
+    text-align: center;
+  }
+  
+  .image-preview {
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .img-thumbnail {
+    width: 155px;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  

@@ -1,0 +1,54 @@
+.auth-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .image-section {
+    flex: 1;
+    background: url('E:\selenium-soft\App-dev\crystal\public\wed.jpg') no-repeat center center;
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .form-section {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-header h2 {
+    margin: 0;
+  }
+  
+  .form-header a {
+    text-decoration: none;
+    color: #0083b0;
+    font-weight: bold;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
+  /* input {
+     margin-bottom: 20px; 
+  } */
+  

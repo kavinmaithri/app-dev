@@ -1,0 +1,14 @@
+.profile-card h3 {
+    margin: 0 0 10px 0;
+  }
+  
+  .profile-card p {
+    margin: 5px 0;
+  }
+  
+  .profile-card button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

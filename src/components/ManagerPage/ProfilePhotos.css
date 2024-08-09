@@ -1,0 +1,18 @@
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+    grid-template-rows: repeat(2, auto);  /* Creates 2 rows */
+    gap: 50px;
+    border-radius: 8px;
+  }
+  
+  .photo-item {
+    position: relative;
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
