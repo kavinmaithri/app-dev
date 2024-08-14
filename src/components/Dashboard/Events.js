@@ -4,18 +4,20 @@ import './Events.css'; // Ensure the CSS file is correctly imported
 
 const Events = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '', // Changed to match backend field
+    last_name: '', // Changed to match backend field
     birthday: '',
-    email: '',
+    email: '', // This should be included if your backend expects it
     phone: '',
     address: '',
     city: '',
     state: '',
-    zip: ''
+    zip: '',
+    user: '' // Add this field if required by the backend
   });
 
   const [isEditing, setIsEditing] = useState(true);
+  const [error, setError] = useState(null); // Added state for handling errors
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -26,9 +28,31 @@ const Events = () => {
     }));
   };
 
-  const handleSave = () => {
-    // You can add any save logic here if needed
-    navigate('/book');
+  const handleSave = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    try {
+      const response = await fetch('http://localhost:8000/events/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Event saved:', data);
+        navigate('/book'); // Navigate on successful save
+      } else {
+        const errorData = await response.json();
+        console.error('Error saving event:', errorData);
+        setError('Failed to save event. Please try again.'); // Set error message
+      }
+    } catch (error) {
+      console.error('Error saving event:', error);
+      setError('Failed to save event. Please try again.'); // Set error message
+    }
   };
 
   const statesOfIndia = [
@@ -43,26 +67,28 @@ const Events = () => {
   return (
     <div className="profile-form">
       <h2>Event Information</h2>
-      <form>
+      <form onSubmit={handleSave}>
         <div className="form-grid">
           <div>
             <label>Name</label>
             <input
               type="text"
-              name="firstName"
-              value={formData.firstName}
+              name="first_name" // Changed to match backend field
+              value={formData.first_name} // Changed to match backend field
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
           <div>
             <label>Description</label>
             <input
               type="text"
-              name="lastName"
-              value={formData.lastName}
+              name="last_name" // Changed to match backend field
+              value={formData.last_name} // Changed to match backend field
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
           <div>
@@ -73,6 +99,7 @@ const Events = () => {
               value={formData.birthday}
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
           <div>
@@ -83,6 +110,7 @@ const Events = () => {
               value={formData.email}
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
           <div>
@@ -93,6 +121,7 @@ const Events = () => {
               value={formData.phone}
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
         </div>
@@ -107,6 +136,7 @@ const Events = () => {
               value={formData.address}
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
           <div>
@@ -117,6 +147,7 @@ const Events = () => {
               value={formData.city}
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
           <div>
@@ -126,6 +157,7 @@ const Events = () => {
               value={formData.state}
               onChange={handleChange}
               disabled={!isEditing}
+              required
             >
               <option value="">State</option>
               {statesOfIndia.map((state) => (
@@ -141,11 +173,14 @@ const Events = () => {
               value={formData.zip}
               onChange={handleChange}
               disabled={!isEditing}
+              required
             />
           </div>
         </div>
 
-        <button type="button" onClick={handleSave}>
+        {error && <p className="error-message">{error}</p>} {/* Display error message if present */}
+        
+        <button type="submit">
           Book Organizer
         </button>
       </form>

@@ -1,4 +1,3 @@
-// SignIn.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { TextField, Button, IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl, Select, MenuItem } from '@mui/material';
@@ -22,26 +21,30 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const userCredentials = { email, password, role };
 
     try {
-      // Fetch all users from db.json
-      const response = await fetch('http://localhost:8080/users');
-      const users = await response.json();
-      
-      // Check if there is a user with the provided credentials
-      const user = users.find(user => user.email === email && user.password === password && user.role === role);
+      const response = await fetch('http://localhost:8000/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userCredentials),
+      });
 
-      if (user) {
+      const result = await response.json();
+
+      if (response.ok) {
         alert('Signed in successfully');
-        dispatch(signIn(user));
-        navigate(user.role === 'event-manager' ? '/manager' : '/dashboard'); // Redirect based on role
+        dispatch(signIn(result)); // Dispatch user data including role to your Redux store
+        navigate(result.role === 'event-manager' ? '/manager' : '/dashboard'); // Redirect based on role
       } else {
         alert('Failed to sign in. Check your credentials and try again.');
       }
     } catch (error) {
       console.error('Error:', error);
+      alert('An error occurred while signing in');
     }
   };
 
@@ -49,25 +52,13 @@ const SignIn = () => {
     <div className="sign-in-form">
       <div className="form-container">
         <div className="image-section">
-          <img src="E:\selenium-soft\App-dev\crystal\public\back.jpg" alt="background" />
+          {/* <img src="E:\selenium-soft\App-dev\crystal\public\back.jpg" alt="background" /> */}
         </div>
         <form className="form-section" onSubmit={handleSubmit}>
           <div className="form-header">
             <h2>Sign In</h2>
-            <NavLink to="/sign-up">Sign Up</NavLink>
+            <NavLink to="/sign-up">Don't have an account? Sign Up</NavLink>
           </div>
-          <FormControl variant="outlined" fullWidth margin="normal">
-            <InputLabel id="role-label">Role</InputLabel>
-            <Select
-              labelId="role-label"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-              label="Role"
-            >
-              <MenuItem value="event-manager">Event Manager</MenuItem>
-              <MenuItem value="event-organizer">Event Organizer</MenuItem>
-            </Select>
-          </FormControl>
           <TextField
             label="E-Mail"
             type="email"
@@ -98,6 +89,18 @@ const SignIn = () => {
               }
               label="Password"
             />
+          </FormControl>
+          <FormControl variant="outlined" fullWidth margin="normal">
+            <InputLabel id="role-label">Role</InputLabel>
+            <Select
+              labelId="role-label"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              label="Role"
+            >
+              <MenuItem value="event-manager">Event Manager</MenuItem>
+              <MenuItem value="event-organizer">Event Organizer</MenuItem>
+            </Select>
           </FormControl>
           <Button variant="contained" color="primary" type="submit" fullWidth>
             Sign In

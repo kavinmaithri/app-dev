@@ -1,6 +1,6 @@
 .auth-form {
-    display: flex;
-    justify-content: center;
+    display:flex;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     max-width: 900px;
@@ -9,6 +9,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
+  .form-cont{
+    display: flex;
+    justify-content: center;
+  }
   .form-container {
     display: flex;
     width: 100%;

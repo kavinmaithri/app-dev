@@ -11,7 +11,9 @@ import { UserProvider } from './components/Context/UserContext';
 import AuthForm from './components/AuthForm/AuthForm';
 import ProfileForm from './components/ManagerPage/ProfileForm';
 import Events from './components/Dashboard/Events';
-
+import Bookings from './components/Dashboard/Booking';
+import { MantineProvider } from '@mantine/core';
+import CreateShipment from './components/Dashboard/CreateShipment';
 function App() {
   const location = useLocation();
   // const hideNavbarPaths = ['/dashboard'];
@@ -25,13 +27,15 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/get-started" element={<GetStarted />} />
-          <Route path="/organizer" element={<AuthForm isSignUp={true} />} />
+          {/* <Route path="/getStarted" element={<GetStarted />} /> */}
+          <Route path="/getStarted" element={<AuthForm isSignUp={true} />} />
           <Route path="/manager" element={<ManagerPage />} />
           <Route path="/profile" element={<ProfileForm />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/book" element={<Bookings />} />
+          <Route path="/ship" element={<CreateShipment />} />
 
         </Routes>
       </div>

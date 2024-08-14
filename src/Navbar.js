@@ -22,7 +22,7 @@ const Navbar = () => {
       <ul>
         {!isLoggedIn && (
           <li>
-            <NavLink to="/organizer" className={({ isActive }) => (isActive ? 'active' : '')}>Get Started!</NavLink>
+            <NavLink to="/getStarted" className={({ isActive }) => (isActive ? 'active' : '')}>Get Started!</NavLink>
           </li>
         )}
         <li className="dropdown">
@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
         </li>
         <li className="dropdown">
-          <NavLink to="/account" className={({ isActive }) => (isActive ? 'active' : '')}>
+          <NavLink to="/sign-in" className={({ isActive }) => (isActive ? 'active' : '')}>
             <AccountCircleIcon />
           </NavLink>
           <div className="dropdown-content">

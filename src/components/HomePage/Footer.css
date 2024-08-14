@@ -1,0 +1,17 @@
+/* Add this to your CSS file or inside a <style> tag */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .text-center {
+    margin-bottom: 0; /* Remove any margin below the footer */
+  }
+  

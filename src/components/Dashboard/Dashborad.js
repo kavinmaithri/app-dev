@@ -71,8 +71,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-
-
       <div className="search-section">
         <input
           type="text"
@@ -109,7 +107,6 @@ const Dashboard = () => {
           </div>
           <div class="column_element2">
             <div class="content">
-              <h3>Events</h3>
               <h2>Crystal planners are beyond your ordinary planners</h2>
               <p>We help you guys in making your events successful. Crystal planners specialize in connecting event organizers with event managers to make their event successful and happen in their budget. We specialise in the creation of extraordinary events for clients. We setup, plan, and manage every project from conception to execution.</p>
             </div>
@@ -144,8 +141,8 @@ const Dashboard = () => {
         </ul>
       </div>
             </div>
-          <div class="button-element">
-          <button className="events-button" onClick={() => navigate('/events')}>
+          <div class="button-element" style={{maxWidth:'150px', display:"flex", justifyContent:"center", marginLeft:'250px'}}>
+          <button className="events-button" style={{backgroundColor:"white",boxShadow:" 0 4px 6px rgba(0, 0, 0, 0.1)", borderRadius:'8px', color:"#333"}}onClick={() => navigate('/events')}>
             EVENTS
           </button>
           </div>
@@ -156,7 +153,7 @@ const Dashboard = () => {
       <div class="filt">
         <h2>Book event managers of your choice!</h2>
       </div>
-      <div className="filter-bar">
+    <div className="filter-bar">
       <div className="filters">
         <button className="filter-btn" onClick={() => openModal('budget')}>
           Budget
@@ -254,7 +251,8 @@ const Dashboard = () => {
       <div className="event-card">
         <div className="event-card-header">
         <img src={`${process.env.PUBLIC_URL}/summa.jpg`} alt="Image 2" className="event-card-image" />
-          <div className="event-card-preferred">Most Preferred</div>
+          <div className="event-card-preferred">Most Preferred
+          </div>
           <button className="shortlist-btn">Shortlist</button>
         </div>
         <div className="event-card-body">

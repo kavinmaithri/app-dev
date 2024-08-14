@@ -1,13 +1,144 @@
 body {
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin: 0;
+    margin-top: 75px;
     padding: 0;
     box-sizing: border-box;
-    color:white;
-    /*background-color:white;*/
+    color:black;
+    /* background-color:white; */
     background-image: url('E:\selenium-soft\App-dev\crystal\public\back.jpg');
+
+  }
+  .icon-text {
+    position: relative;
+    padding-left: 30px; /* Adjust padding based on icon size */
+    display: inline-block;
   }
   
+  .icon-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Width of the icon */
+    height: 30px; /* Height of the icon */
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23e74c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-circles-relation"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M9.183 6.117a6 6 0 1 0 4.511 3.986" /%3E%3Cpath d="M14.813 17.883a6 6 0 1 0 -4.496 -3.954" /%3E%3C/svg%3E');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .icon-text-2 {
+    position: relative; /* Ensure ::before is positioned relative to this container */
+  }
+  
+  .icon-text-2::before {
+    content: '';
+    position: absolute;
+    left: -40px; /* Adjust as needed to position the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Width of the icon */
+    height: 30px; /* Height of the icon */
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23e74c3c" class="icon icon-tabler icons-tabler-filled icon-tabler-message-circle"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M5.821 4.91c3.899 -2.765 9.468 -2.539 13.073 .535c3.667 3.129 4.168 8.238 1.152 11.898c-2.841 3.447 -7.965 4.583 -12.231 2.805l-.233 -.101l-4.374 .931l-.04 .006l-.035 .007h-.018l-.022 .005h-.038l-.033 .004l-.021 -.001l-.023 .001l-.033 -.003h-.035l-.022 -.004l-.022 -.002l-.035 -.007l-.034 -.005l-.016 -.004l-.024 -.005l-.049 -.016l-.024 -.005l-.011 -.005l-.022 -.007l-.045 -.02l-.03 -.012l-.011 -.006l-.014 -.006l-.031 -.018l-.045 -.024l-.016 -.011l-.037 -.026l-.04 -.027l-.002 -.004l-.013 -.009l-.043 -.04l-.025 -.02l-.006 -.007l-.056 -.062l-.013 -.014l-.011 -.014l-.039 -.056l-.014 -.019l-.005 -.01l-.042 -.073l-.007 -.012l-.004 -.008l-.007 -.012l-.014 -.038l-.02 -.042l-.004 -.016l-.004 -.01l-.017 -.061l-.007 -.018l-.002 -.015l-.005 -.019l-.005 -.033l-.008 -.042l-.002 -.031l-.003 -.01v-.016l-.004 -.054l.001 -.036l.001 -.023l.002 -.053l.004 -.025v-.019l.008 -.035l.005 -.034l.005 -.02l.004 -.02l.018 -.06l.003 -.013l1.15 -3.45l-.022 -.037c-2.21 -3.747 -1.209 -8.391 2.413 -11.119z" /%3E%3C/svg%3E');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .icon-text-3 {
+    position: relative; /* Ensure ::before is positioned relative to this container */
+    padding-left: 30px; /* Adjust padding based on icon size */
+    display: inline-block;
+  }
+  
+  .icon-text-3::before {
+    content: '';
+    position: absolute;
+    left: 0; /* Adjust as needed to position the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Width of the icon */
+    height: 30px; /* Height of the icon */
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%236c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-wifi"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 18l.01 0" /%3E%3Cpath d="M9.172 15.172a4 4 0 0 1 5.656 0" /%3E%3Cpath d="M6.343 12.343a8 8 0 0 1 11.314 0" /%3E%3Cpath d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" /%3E%3C/svg%3E');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .text1 {
+    position: relative;
+    width: 450px;
+    text-align: left;
+  }
+  
+  .text1 p {
+    position: relative;
+    padding-left: 40px; /* Space for the icon */
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .text1 p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px; /* Size of the icon */
+    height: 24px; /* Size of the icon */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .text1 p:nth-of-type(1)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%239c27b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-link"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M14.121 9.879a4 4 0 0 1 0 5.656m-7.779 -5.656a4 4 0 0 0 0 5.656m7.779 -5.656a4 4 0 0 1 5.656 0m-5.656 5.656a4 4 0 0 0 5.656 0m-5.656 -5.656a4 4 0 0 1 -5.656 5.656" /%3E%3C/svg%3E');
+  }
+  
+  .text1 p:nth-of-type(2)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%234caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-mobile"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2zm2 2v16h8V4H8zM9 16h6v2H9z" /%3E%3C/svg%3E');
+  }
+  
+  .text1 p:nth-of-type(3)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23f44336" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-chart-line"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M3 17l4 -4l3 3l5 -5l4 4l2 -2" /%3E%3Cpath d="M21 20V4" /%3E%3Cpath d="M3 20V10" /%3E%3C/svg%3E');
+  }
+  .text2 {
+    position: relative;
+    text-align: left;
+  }
+  
+  .text2 p {
+    position: relative;
+    padding-left: 40px; /* Space for the icon */
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .text2 p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px; /* Size of the icon */
+    height: 24px; /* Size of the icon */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .text2 p:nth-of-type(1)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%239c27b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-settings"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 5a7 7 0 1 1 0 14a7 7 0 0 1 0 -14zM12 12l-1.5 1.5M12 12l1.5 1.5M12 12l-1.5 -1.5M12 12l1.5 -1.5" /%3E%3C/svg%3E');
+  }
+  
+  .text2 p:nth-of-type(2)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%234caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-help-circle"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 20a8 8 0 1 0 0 -16a8 8 0 0 0 0 16zm0 -6a1 1 0 1 1 0 -2a1 1 0 0 1 0 2zm-1 -4h2v2h-2z" /%3E%3C/svg%3E');
+  }
+  
+  .text2 p:nth-of-type(3)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23f44336" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-lock"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M5 10V7a7 7 0 0 1 14 0v3M10 10v10h4V10" /%3E%3C/svg%3E');
+  }
+  
+
+  .img-raised img{
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    height: 50px;
+  }
   .navbar {
     /*background-color:rgb(225, 163, 240);*/
     padding: 1rem;
@@ -88,8 +219,8 @@ body {
   .video-container {
     margin: 2rem auto;
     width: 80%;
-    max-width: 700px;
-    height: 350px; /* This will create a 16:9 aspect ratio rectangle */
+    max-width: 800px;
+    height: 400px; /* This will create a 16:9 aspect ratio rectangle */
     border: 2px solid white;
     border-radius: 8px;
     overflow: hidden;
